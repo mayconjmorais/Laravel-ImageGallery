@@ -42,7 +42,7 @@ class HomeController extends Controller
         $image = Gallery::find($id);
         $image->delete();
 
-        $image_path = $image->title;
+        $image_path = 'images/'.$image->title;
         // dd($image_path);
         // Before do it should validate if it was delete from database
         if(file_exists($image_path)){

@@ -41,7 +41,7 @@
                             <div class="box">
                                 <div class="imgbox">
                                     <a target="_blank">
-                                        <img class="img-fluid card-img-top p-2" src="../{{$img->title}}" alt="image">
+                                        <img class="img-fluid card-img-top p-2" src="../images/{{$img->title}}" alt="image">
                                     </a>
                                     <div class="content">
                                         <p>{{$img->title}}</p>

@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('Welcome back, '). Auth::user()->name }}
 
                     <div class="form-group row mb-1">
                         <form action= "{{ route('imagestore') }}" method= "POST" enctype="multipart/form-data">

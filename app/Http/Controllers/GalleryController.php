@@ -20,8 +20,9 @@ class GalleryController extends Controller
      */
     public function index()
     {
+        // bring us all images
         $images=$this->objImagem->all();
-
+        // redirect to index send all images
         return view('index')->with([
             'images'=> $images, 
         ]);
@@ -48,23 +49,25 @@ class GalleryController extends Controller
         //  dd($request->all());
         $image=$request->image;
 
+        // upload image - need to inform enctype="multipart/form-data" in the form (home line 20)
         if($image){
             $imageName=$image->getClientOriginalName();
             $image->move('images', $imageName);
         }
-
+        // set the value to hidden field
         if(!$request->hidden){
             $hide = 'on';
         }else{
             $hide = 'off';
         }
-
+        // validation to check if image is in the gallery. Problem if delete by name*
         $img=$this->objImagem->create([
-            'title'=>"images/".$imageName,
+            // 'title'=>"images/".$imageName,
+            'title'=>$imageName,
             'owner'=>$request->owner,
             'hidden'=>$hide,
         ]);
-
+        // if success redirect
         if($img){
             return redirect('/home');
         }
