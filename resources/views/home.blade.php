@@ -17,6 +17,13 @@
                     {{ __('Welcome back, '). Auth::user()->name }}
 
                     <div class="form-group row mb-1">
+                        {{-- AJUSTAR ESSA MENSAGEM  --}}
+                        @if(session('sucess_message'))
+                            <div class="alert alert-sucess">
+                                {{ session('success_message') }}
+                            </div>
+                        @endif
+
                         <form action= "{{ route('imagestore') }}" method= "POST" enctype="multipart/form-data">
                             @csrf
                             <input type="file" name="image" required>

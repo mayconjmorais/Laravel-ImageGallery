@@ -69,7 +69,7 @@ class GalleryController extends Controller
         ]);
         // if success redirect
         if($img){
-            return redirect('/home');
+            return redirect('/home')->with('success', 'Picture added in the Gallery!');
         }
     }
 

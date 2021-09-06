@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use RealRashid\SweetAlert\Facades\Alert;
 
 Route::get('/', 'App\Http\Controllers\GalleryController@index') ->name('images.index');
 Route::post('/image-store', 'App\Http\Controllers\GalleryController@store')->name('imagestore');
